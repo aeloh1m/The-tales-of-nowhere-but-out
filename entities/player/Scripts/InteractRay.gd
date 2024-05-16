@@ -11,4 +11,7 @@ func _ready():
 func _process(delta):
 	prompt.text = ""
 	if is_colliding():
-		prompt.text = "Alright that is a cube"
+		var detected = get_collider()
+		
+		if detected is Interactable:	
+			prompt.text = detected.get_prompt()
