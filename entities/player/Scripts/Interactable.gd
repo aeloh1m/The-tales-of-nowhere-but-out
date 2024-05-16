@@ -1,6 +1,8 @@
 class_name Interactable
 extends StaticBody3D
 
+signal interacted(body)
+
 @export var prompt_message = "Interact"
 @export var prompt_action = "interact"
 
@@ -11,6 +13,10 @@ func get_prompt():
 			key_name = OS.get_keycode_string(action.scancode)
 
 	return prompt_message + "\n[" + key_name + "]"
+	
+func interact(body):
+	emit_signal("interacted", body)
+	print("interaction")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

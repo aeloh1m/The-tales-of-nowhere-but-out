@@ -14,4 +14,7 @@ func _process(delta):
 		var detected = get_collider()
 		
 		if detected is Interactable:	
-			prompt.text = detected.get_prompt()
+			prompt.text = detected.name
+			
+			if Input.is_action_just_pressed(detected.prompt_action):
+				detected.interact(owner)
