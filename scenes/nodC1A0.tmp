@@ -136,6 +136,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3ar0p")
 [node name="Button" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7701, 0, 0)
 script = ExtResource("5_vx2fw")
+prompt_message = null
+prompt_action = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.66044, 1.05609, -2.01754)

@@ -3,6 +3,8 @@ class_name Interactable
 
 signal interacted(body)
 
+
+@onready var dialog = get_node("DialogBox")
 @export var prompt_message = "Interact"
 @export var prompt_action = "interact"
 
@@ -17,7 +19,13 @@ func get_prompt():
 func interact(body):
 	emit_signal("interacted", body)
 	print("interaction")
+	dialogBoxEntry()
 
+# Calls for a dialogbox entry:
+
+func dialogBoxEntry():
+	remove_child(dialog)
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

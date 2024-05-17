@@ -1,6 +1,8 @@
 extends RayCast3D
 @onready var neck := $Neck
 @onready var prompt := $Prompt
+@onready var dialog := get_node("DialogBox")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,3 +20,9 @@ func _process(delta):
 			
 			if Input.is_action_just_pressed(detected.prompt_action):
 				detected.interact(owner)
+		
+		#DialogBoxDetection
+		if  detected is DialogBox:
+			print(dialog.dialogbox)
+		
+			
