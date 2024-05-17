@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c0q36r681k0xc"]
+[gd_scene load_steps=17 format=3 uid="uid://c0q36r681k0xc"]
 
 [ext_resource type="Script" path="res://entities/player/CharacterBody3D.gd" id="1_4sbvw"]
 [ext_resource type="Script" path="res://entities/player/Scripts/InteractRay.gd" id="2_echeg"]
@@ -44,11 +44,6 @@ material = SubResource("StandardMaterial3D_h83mw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfeqj"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_j73jw"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_15d6j"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -57,7 +52,6 @@ environment = SubResource("Environment_ycyk4")
 [node name="Node" type="Node" parent="."]
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4106, 0, 0)
 script = ExtResource("1_4sbvw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -117,7 +111,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_blsok")
 
 [node name="GridMap" type="GridMap" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 29.8467, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh_library = ExtResource("2_m8d6u")
 cell_size = Vector3(1, 1, 1)
 cell_center_y = false
@@ -126,13 +120,12 @@ data = {
 }
 
 [node name="Object" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6232, 0.863738, -3.12563)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14689, 0.863738, -3.12563)
 mesh = SubResource("BoxMesh_i1fai")
 skin = SubResource("Skin_hcddv")
 surface_material_override/0 = SubResource("StandardMaterial3D_3ar0p")
 
 [node name="Button" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7701, 0, 0)
 script = ExtResource("5_vx2fw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button"]
@@ -142,12 +135,3 @@ mesh = SubResource("CylinderMesh_tdura")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Button"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50644, 1.5699, -1.96982)
 shape = SubResource("BoxShape3D_nfeqj")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(70, 0, 0, 0, 0.9, 0, 0, 0, 70, 0, -0.5, 0)
-mesh = SubResource("BoxMesh_j73jw")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_15d6j")
