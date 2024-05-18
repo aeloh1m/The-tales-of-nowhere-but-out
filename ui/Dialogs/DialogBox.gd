@@ -1,7 +1,7 @@
 extends TextureRect
-class_name DialogBox
 
 @onready var dialogbox = $"."
+
 var dialogOnOff = false
 # Called when the node enters the scene tree for the first time.
 func _ready():

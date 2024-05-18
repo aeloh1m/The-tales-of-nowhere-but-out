@@ -17,8 +17,9 @@ config/icon="res://Structure/main/icon.svg"
 
 [autoload]
 
-DialogManager="*res://ui/Dialogs/DialogManager.gd"
-Dialog="*res://ui/Dialogs/DialogBox.gd"
+DialogManager="res://ui/Dialogs/DialogManager.gd"
+Dialog="res://ui/Dialogs/DialogBox.gd"
+InteractableClass="*res://entities/player/Scripts/Interactable.gd"
 
 [display]
 

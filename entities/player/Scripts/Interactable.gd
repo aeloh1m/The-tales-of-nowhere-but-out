@@ -2,9 +2,7 @@ extends StaticBody3D
 class_name Interactable
 
 signal interacted(body)
-signal toggleDialogBox()
 
-@onready var dialog = $"../DialogBox"
 @export var prompt_message = "Interact"
 @export var prompt_action = "interact"
 
@@ -19,19 +17,6 @@ func get_prompt():
 func interact(body):
 	emit_signal("interacted", body)
 	print("interaction")
-	dialog.dialogbox.show()
-		
-
-# Calls for a dialogbox entry:
-
-const lines: Array[String] = [
-	"So far so good, this is the present",
-	"game dialog."
-]
-
-
-func dialogBoxEntry():
-	remove_child(dialog)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
