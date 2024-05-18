@@ -15,6 +15,10 @@ run/main_scene="res://scenes/node_3d.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://Structure/main/icon.svg"
 
+[autoload]
+
+DialogManager="*res://ui/Dialogs/DialogManager.gd"
+
 [display]
 
 window/size/viewport_width=320

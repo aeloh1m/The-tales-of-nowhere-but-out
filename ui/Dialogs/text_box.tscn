@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf8ub5kbgjqn1"]
+
+[ext_resource type="Script" path="res://ui/Dialogs/DialogControl.gd" id="1_voks4"]
+[ext_resource type="Texture2D" uid="uid://c1mssoia03w4p" path="res://ui/Dialogs/textbox.png" id="2_dp28k"]
+
+[node name="TextBox" type="MarginContainer"]
+script = ExtResource("1_voks4")
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.980392, 0.956863, 0.607843, 1)
+text = "asdf"
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_dp28k")
+region_rect = Rect2(64, 80, 176, 96)
+patch_margin_left = 112
+patch_margin_top = 64
+patch_margin_right = 108
+patch_margin_bottom = 64

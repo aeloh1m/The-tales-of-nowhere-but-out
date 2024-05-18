@@ -19,9 +19,15 @@ func get_prompt():
 func interact(body):
 	emit_signal("interacted", body)
 	print("interaction")
-	dialogBoxEntry()
+	DialogManager.startDialog(global_rotation, lines)
 
 # Calls for a dialogbox entry:
+
+const lines: Array[String] = [
+	"So far so good, this is the present",
+	"game dialog."
+]
+
 
 func dialogBoxEntry():
 	remove_child(dialog)
