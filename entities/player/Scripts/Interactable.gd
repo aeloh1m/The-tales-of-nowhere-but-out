@@ -2,9 +2,9 @@ extends StaticBody3D
 class_name Interactable
 
 signal interacted(body)
+signal toggleDialogBox()
 
-
-@onready var dialog = get_node("DialogBox")
+@onready var dialog = $"../DialogBox"
 @export var prompt_message = "Interact"
 @export var prompt_action = "interact"
 
@@ -19,7 +19,8 @@ func get_prompt():
 func interact(body):
 	emit_signal("interacted", body)
 	print("interaction")
-	DialogManager.startDialog(global_rotation, lines)
+	dialog.dialogbox.show()
+		
 
 # Calls for a dialogbox entry:
 
