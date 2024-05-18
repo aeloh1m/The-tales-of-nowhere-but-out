@@ -6,8 +6,6 @@ var dialogOnOff = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialogbox.hide()
-
-	
 	print("Hey i'm the fucker", dialogbox)
 
 

@@ -20,6 +20,7 @@ config/icon="res://Structure/main/icon.svg"
 DialogManager="res://ui/Dialogs/DialogManager.gd"
 Dialog="res://ui/Dialogs/DialogBox.gd"
 InteractableClass="*res://entities/player/Scripts/Interactable.gd"
+TextlineManagerShow="*res://scripts/textlinesManager/textlineManager.gd"
 
 [display]
 
