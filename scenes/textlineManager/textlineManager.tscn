@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://3gjkq1o23gn2"]
+[gd_scene load_steps=2 format=3 uid="uid://3gjkq1o23gn2"]
 
 [ext_resource type="Script" path="res://scripts/textlinesManager/textlineManager.gd" id="1_wnrlv"]
-[ext_resource type="Texture2D" uid="uid://c1mssoia03w4p" path="res://ui/Dialogs/textbox.png" id="2_tvbnn"]
-[ext_resource type="Script" path="res://ui/Dialogs/DialogBox.gd" id="3_qrnoj"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -26,20 +24,5 @@ offset_right = 86.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="DialogBox" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_tvbnn")
-script = ExtResource("3_qrnoj")
+text = "asdasdasdas"
+vertical_alignment = 1

@@ -6,7 +6,7 @@ textFileName = string containing directory of the file on which display the text
 '''
 extends Control
 
-@onready var text := $Text
+@onready var textLabel := $Text
 
 
 var example_dict = {}
@@ -23,4 +23,8 @@ func import_resources_data(textFileName: String):
 		var data_set = Array(file.get_csv_line())
 		example_dict[example_dict.size()] = data_set
 	file.close()
-	print(example_dict)
+	return example_dict
+	
+#func _process(delta):
+#	textLabel.text = "hello"
+	
