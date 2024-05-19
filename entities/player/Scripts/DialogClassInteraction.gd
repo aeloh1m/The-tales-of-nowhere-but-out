@@ -5,6 +5,7 @@ class_name DialogClassInteraction
 @onready var dialog := $"../DialogBox"
 @onready var dialogtext := $"../DialogBox/DialogText"
 
+var currentIndex = 0
 
 # Calls for a dialogbox entry: 
 
@@ -23,6 +24,10 @@ func formatValueFromDict(valueToFormat: String):
 	print(formattedText, "real formatted")
 		
 	return formattedText
+	
+func yield_until_input(action: String, currentIndex) -> void:
+	while not Input.is_action_just_pressed(action):
+		await get_tree().process_frame
 
 func dialogBoxRead():
 	var textLinesDict
@@ -37,14 +42,22 @@ func dialogBoxRead():
 #	if wholeDictLength / 2 == 0:
 #		trueHalve = 2
 	for key in textLinesDict:
+		
 		var value = textLinesDict[key]
 		var valueToString
 		var formattedValue
 		valueToString = str(value) 
 		formattedValue = formatValueFromDict(valueToString)
 		
+		currentIndex = formattedValue
+		
 		print(formattedValue)
 		dialogtext.text = formattedValue
+
+		while not Input.is_action_just_pressed('next'):
+			await get_tree().process_frame
+			if Input.is_action_just_pressed('next'):
+				continue
 #	for indexQuantity in range(len(textLinesDict)):
 #		print(len(textLinesDict))
 #		if str(textLinesDict[indexQuantity]) == "":
@@ -55,4 +68,8 @@ func dialogBoxRead():
 '''
 What I can do is just loop and make a flag with both the conditions the flag to be true and the
 indexQuantity to be same as the array length.
+
+By now I have the for loop that does not compute every index yet, what should I do?
+so, for instance we're using await fn, I might be able to get it working if I give a
+flag too, 
 '''
