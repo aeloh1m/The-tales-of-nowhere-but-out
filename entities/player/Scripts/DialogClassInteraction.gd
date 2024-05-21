@@ -32,7 +32,7 @@ func yield_until_input(action: String, currentIndex) -> void:
 func dialogBoxRead():
 	var textLinesDict
 	var textFileName = "res://textlines/level_one/levelonetxt.txt"
-	
+	var flag = true
 	textLinesDict = TextlineManagerShow.import_resources_data(textFileName)
 	print(textLinesDict, "new me")
 	print(textLinesDict[0], "cero me")
@@ -54,10 +54,12 @@ func dialogBoxRead():
 		print(formattedValue)
 		dialogtext.text = formattedValue
 
-		while not Input.is_action_just_pressed('next'):
-			await get_tree().process_frame
+		while flag:
 			if Input.is_action_just_pressed('next'):
-				continue
+				flag = false
+			await get_tree().process_frame
+
+		flag = true
 #	for indexQuantity in range(len(textLinesDict)):
 #		print(len(textLinesDict))
 #		if str(textLinesDict[indexQuantity]) == "":
